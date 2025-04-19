@@ -19,23 +19,23 @@ import blogPage from "./singletons/pages/blog-page";
 import projectsPage from "./singletons/pages/projects-page";
 
 const coreSchema = [
-  generalSettings,
-  navigationSettings,
-  marketingSettings,
-  blogSettings,
-  redirect,
-  page,
-  post,
-  postCategory,
-  author,
-  testimonial,
-  projectCategory,
-  project,
-  form,
-  blogPage,
-  service,
-  servicesPage,
-  projectsPage,
+    generalSettings,
+    navigationSettings,
+    marketingSettings,
+    blogSettings,
+    redirect,
+    page,
+    post,
+    postCategory,
+    author,
+    testimonial,
+    projectCategory,
+    project,
+    form,
+    blogPage,
+    service,
+    servicesPage,
+    projectsPage,
 ];
 
 import { pageBuilder } from "./page-builder/page-builder";
@@ -53,45 +53,41 @@ import formBlock from "./page-builder/blocks/form-block";
 import mediaBlock from "./page-builder/blocks/media-block";
 
 const pageBuilderSchema = [
-  pageBuilder,
-  heroBlock,
-  headerBlock,
-  featureCardsBlock,
-  featuresMinimalBlock,
-  freeformBlock,
-  portableTextBlock,
-  callToActionBlock,
-  logoBlock,
-  mediaBlock,
-  testimonialBlock,
-  servicesBlock,
-  formBlock
+    pageBuilder,
+    heroBlock,
+    headerBlock,
+    featureCardsBlock,
+    featuresMinimalBlock,
+    freeformBlock,
+    portableTextBlock,
+    callToActionBlock,
+    logoBlock,
+    mediaBlock,
+    testimonialBlock,
+    servicesBlock,
+    formBlock,
 ];
 
-import seoObject from './objects/seo';
-import headingObject from './objects/heading';
-import richTextObject from './objects/rich-text';
-import spacerObject from './objects/spacer';
-import videoObject from './objects/video';
-import buttonObject from './objects/button';
+import seoObject from "./objects/seo";
+import headingObject from "./objects/heading";
+import richTextObject from "./objects/rich-text";
+import spacerObject from "./objects/spacer";
+import videoObject from "./objects/video";
+import buttonObject from "./objects/button";
 import singleImageObject from "./objects/single-image";
 import callToActionObject from "./objects/call-to-action";
 
 const objectSchema = [
-  seoObject,
-  headingObject,
-  richTextObject,
-  buttonObject,
-  singleImageObject,
-  spacerObject,
-  callToActionObject,
-  videoObject
+    seoObject,
+    headingObject,
+    richTextObject,
+    buttonObject,
+    singleImageObject,
+    spacerObject,
+    callToActionObject,
+    videoObject,
 ];
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [
-    ...coreSchema,
-    ...pageBuilderSchema,
-    ...objectSchema
-  ],
+    types: [...coreSchema, ...pageBuilderSchema, ...objectSchema],
 };

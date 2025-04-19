@@ -19,7 +19,7 @@ export const heroBlockQuery = `
     overlayType,
     anchorId
   }
-`
+`;
 
 export const headerBlockQuery = `
   _type == "headerBlock" => {
@@ -29,7 +29,7 @@ export const headerBlockQuery = `
     bottomCornerRadius,
     anchorId
   }
-`
+`;
 
 export const featureBlockQuery = `
   _type == "featureBlock" => {
@@ -49,7 +49,7 @@ export const featureBlockQuery = `
     },
     anchorId
   }
-`
+`;
 
 export const featureCardsBlockQuery = `
   _type == "featureCardsBlock" => {
@@ -79,7 +79,7 @@ export const featureCardsBlockQuery = `
     anchorId,
     ${paddingQuery}
   }
-`
+`;
 
 export const featuresMinimalBlockQuery = `
   _type == "featuresMinimalBlock" => {
@@ -97,7 +97,7 @@ export const featuresMinimalBlockQuery = `
     anchorId,
     ${paddingQuery}
   }
-`
+`;
 
 export const callToActionBlockQuery = `
   _type == "callToActionBlock" => {
@@ -110,7 +110,7 @@ export const callToActionBlockQuery = `
     anchorId,
     ${paddingQuery}
   }
-`
+`;
 
 export const logoBlockQuery = `
   _type == "logoBlock" => {
@@ -127,7 +127,7 @@ export const logoBlockQuery = `
     },
     anchorId
   }
-`
+`;
 export const testimonialBlockQuery = `
   _type == "testimonialBlock" => {
     ${baseQuery},
@@ -151,7 +151,7 @@ export const testimonialBlockQuery = `
     cornerRadiusBottom,
     ${paddingQuery}
   }
-`
+`;
 
 export const freeformBlockQuery = `
   _type == "freeformBlock" => {
@@ -191,7 +191,7 @@ export const freeformBlockQuery = `
     anchorId,
     border
   }
-`
+`;
 
 export const portableTextBlockQuery = `
   _type == "portableTextBlock" => {
@@ -202,7 +202,7 @@ export const portableTextBlockQuery = `
     anchorId,
     ${paddingQuery}
   }
-`
+`;
 
 export const blogArchiveBlockQuery = `
   _type == "blogArchiveBlock" => {
@@ -216,7 +216,7 @@ export const blogArchiveBlockQuery = `
     anchorId,
     ${paddingQuery}
   }
-`
+`;
 
 export const servicesBlockQuery = `
   _type == "servicesBlock" => {
@@ -239,7 +239,7 @@ export const servicesBlockQuery = `
     anchorId,
     ${paddingQuery}
   }
-`
+`;
 
 export const formBlockQuery = `
   _type == "formBlock" => {
@@ -254,7 +254,7 @@ export const formBlockQuery = `
     anchorId,
     ${paddingQuery}
   }
-`
+`;
 
 export const mediaBlockQuery = `
   _type == "mediaBlock" => {
@@ -269,4 +269,35 @@ export const mediaBlockQuery = `
     videoUrl,
     anchorId
   }
-`
+`;
+
+export const eventsBlockQuery = `
+  _type == "eventsBlock" => {
+    ${baseQuery},
+    term,
+    title,
+    events[]{
+      _key,
+      title,
+      date,
+      description
+    }
+  }
+`;
+
+export const heroSliderBlockQuery = `
+  _type == "heroSliderBlock" => {
+    ${baseQuery},
+    heading,
+    content,
+    images[]{
+      _key,
+      asset->{
+        url
+      },
+      alt
+    },
+    buttons,
+    anchorId
+  }
+`;

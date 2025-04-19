@@ -1,18 +1,18 @@
-import { 
-  heroBlockQuery, 
-  headerBlockQuery,
-  featureBlockQuery,
-  featureCardsBlockQuery,
-  featuresMinimalBlockQuery,
-  callToActionBlockQuery,
-  logoBlockQuery,
-  testimonialBlockQuery,
-  freeformBlockQuery,
-  portableTextBlockQuery,
-  blogArchiveBlockQuery,
-  servicesBlockQuery,
-  formBlockQuery,
-  mediaBlockQuery,
+import {
+    heroBlockQuery,
+    headerBlockQuery,
+    featureBlockQuery,
+    featureCardsBlockQuery,
+    featuresMinimalBlockQuery,
+    callToActionBlockQuery,
+    logoBlockQuery,
+    testimonialBlockQuery,
+    freeformBlockQuery,
+    portableTextBlockQuery,
+    blogArchiveBlockQuery,
+    servicesBlockQuery,
+    formBlockQuery,
+    mediaBlockQuery,
 } from "./blocks";
 
 export const pageBuilder = `
@@ -32,4 +32,4 @@ export const pageBuilder = `
     ${formBlockQuery},
     ${mediaBlockQuery}
   }
-`
+`;
