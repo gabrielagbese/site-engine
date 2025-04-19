@@ -6,6 +6,7 @@ import {
     postSlugsQuery,
     postsByCategoryQuery,
 } from "@/sanity/lib/queries/documents/post";
+import { CircleSlash } from "lucide-react";
 
 interface PageProps {
     params: Promise<{ slug: string }>;

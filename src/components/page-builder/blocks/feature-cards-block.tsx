@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { PageBuilderType } from "@/types";
-import { CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Heading from "@/components/shared/heading";
 import Container from "@/components/global/container";
