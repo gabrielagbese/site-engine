@@ -1,24 +1,24 @@
 import { defineConfig } from "sanity";
-import { schema } from "@/sanity/schemas";
+import { schema } from "./src/sanity/schemas";
 import { media } from "sanity-plugin-media";
 import { visionTool } from "@sanity/vision";
 import { structureTool } from "sanity/structure";
 import { assist } from "@sanity/assist";
-import { structure } from "@/sanity/lib/structure";
+import { structure } from "./src/sanity/lib/structure";
 import { presentationTool } from "sanity/presentation";
-import { resolve } from "@/sanity/presentation/resolve";
+import { resolve } from "./src/sanity/presentation/resolve";
 import { simplerColorInput } from "sanity-plugin-simpler-color-input";
-import { defaultDocumentNode } from "@/sanity/lib/structure/default-document-node";
+import { defaultDocumentNode } from "./src/sanity/lib/structure/default-document-node";
 import {
     apiVersion,
     dataset,
     projectId,
     studioUrl,
     useCdn,
-} from "@/sanity/lib/api";
+} from "./src/sanity/lib/api";
 
 const config = defineConfig({
-    title: process.env.NEXT_PUBLIC_SITE_NAME,
+    title: process.env.SANITY_STUDIO_SITE_NAME,
     useCdn: useCdn,
     dataset: dataset,
     basePath: studioUrl,

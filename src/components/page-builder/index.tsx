@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import { ComponentType } from "react";
 import { PageBuilderType } from "@/types";
 import { createDataAttribute } from "next-sanity";
-import { PageBySlugQueryResult } from "../../../sanity.types";
+import { PageBySlugQueryResult } from "@/sanity.types";
 import { dataset, projectId, studioUrl } from "@/sanity/lib/api";
 
 const HeroBlock = dynamic(() => import("./blocks/hero-block"));
