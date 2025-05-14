@@ -6,8 +6,8 @@ export const config = {
      *
      * https://nextjs.org/docs/basic-features/environment-variables
      **/
-    dataset: process.env.SANITY_STUDIO_SANITY_DATASET || "production",
-    projectId: process.env.SANITY_STUDIO_SANITY_PROJECT_ID,
+    dataset: process.env.SANITY_STUDIO_DATASET || "production",
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID,
     apiVersion: "2025-04-19", // or today's date for latest
     /**
      * Set useCdn to `false` if your application require the freshest possible

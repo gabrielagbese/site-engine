@@ -39,9 +39,9 @@ A fully-featured starter template made with Next.js, Sanity, TypeScript, Tailwin
 | :------------------------ | :----------------------------------------------- |
 | `SANITY_STUDIO_SITE_URL`| The public URL of your website (use `http://localhost:3000` during development) |
 | `SANITY_STUDIO_SITE_NAME`| The name of your website |
-| `SANITY_STUDIO_SANITY_DATASET`| The name of your Sanity dataset (usually "production") |
-| `SANITY_STUDIO_SANITY_PROJECT_ID`| Your Sanity project ID found in project settings |
-| `SANITY_STUDIO_SANITY_API_VERSION`| The Sanity API version to use (e.g., "2023-05-03") |
+| `SANITY_STUDIO__DATASET`| The name of your Sanity dataset (usually "production") |
+| `SANITY_STUDIO__PROJECT_ID`| Your Sanity project ID found in project settings |
+| `SANITY_STUDIO__API_VERSION`| The Sanity API version to use (e.g., "2023-05-03") |
 | `RESEND_SENDER_EMAIL`| The email address used to send emails via Resend |
 | `RESEND_RECIEVER_EMAIL`| The email address that receives contact form submissions |
 | `RESEND_API_KEY`| Your Resend API key for email functionality |
