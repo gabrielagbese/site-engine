@@ -1,0 +1,4549 @@
+[
+  {
+    "fields": [
+      {
+        "readOnly": true,
+        "hidden": true,
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "fieldsets": [
+              {
+                "name": "appearance",
+                "options": {
+                  "collapsible": true,
+                  "collapsed": true
+                }
+              }
+            ],
+            "type": "sanity.assist.instruction",
+            "title": "Instruction"
+          }
+        ],
+        "name": "instructions",
+        "type": "array"
+      }
+    ],
+    "name": "sanity.assist.schemaType.field",
+    "type": "object",
+    "title": "Field prompt"
+  },
+  {
+    "fields": [
+      {
+        "name": "prompt",
+        "type": "sanity.assist.instruction.prompt",
+        "title": "Instruction"
+      },
+      {
+        "name": "icon",
+        "type": "string",
+        "fieldset": "appearance"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "fieldset": "appearance"
+      },
+      {
+        "readOnly": "conditional",
+        "name": "userId",
+        "type": "string",
+        "title": "Visibility",
+        "fieldset": "appearance"
+      },
+      {
+        "hidden": true,
+        "name": "createdById",
+        "type": "string",
+        "title": "Created by",
+        "fieldset": "appearance"
+      },
+      {
+        "of": [
+          {
+            "type": "sanity.assist.output.field",
+            "title": "Output field"
+          },
+          {
+            "type": "sanity.assist.output.type",
+            "title": "Output type"
+          }
+        ],
+        "name": "output",
+        "type": "array",
+        "title": "Output filter"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "appearance",
+        "options": {
+          "collapsible": true,
+          "collapsed": true
+        }
+      }
+    ],
+    "name": "sanity.assist.instruction",
+    "type": "object",
+    "title": "Instruction"
+  },
+  {
+    "options": {
+      "modal": {
+        "type": "popover"
+      }
+    },
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "path",
+        "type": "string",
+        "title": "Field"
+      }
+    ],
+    "name": "sanity.assist.instruction.fieldRef",
+    "type": "object",
+    "title": "Field"
+  },
+  {
+    "of": [
+      {
+        "marks": {
+          "annotations": []
+        },
+        "styles": [
+          {
+            "value": "normal",
+            "title": "Normal"
+          }
+        ],
+        "of": [
+          {
+            "options": {
+              "modal": {
+                "type": "popover"
+              }
+            },
+            "name": "sanity.assist.instruction.fieldRef",
+            "type": "sanity.assist.instruction.fieldRef",
+            "title": "Field"
+          },
+          {
+            "options": {
+              "modal": {
+                "type": "popover",
+                "width": "auto"
+              }
+            },
+            "name": "sanity.assist.instruction.context",
+            "type": "sanity.assist.instruction.context",
+            "title": "AI context"
+          },
+          {
+            "options": {
+              "modal": {
+                "type": "popover",
+                "width": 1
+              }
+            },
+            "name": "sanity.assist.instruction.userInput",
+            "type": "sanity.assist.instruction.userInput",
+            "title": "User input"
+          }
+        ],
+        "type": "block"
+      }
+    ],
+    "name": "sanity.assist.instruction.prompt",
+    "type": "array",
+    "title": "Prompt"
+  },
+  {
+    "options": {
+      "modal": {
+        "type": "popover",
+        "width": 1
+      }
+    },
+    "fields": [
+      {
+        "placeholder": "Provide instruction text",
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "The header above the user input text field",
+        "name": "message",
+        "type": "string",
+        "title": "User input title"
+      },
+      {
+        "rows": 3,
+        "description": "The description above the user input text field",
+        "name": "description",
+        "type": "text",
+        "title": "User input description"
+      }
+    ],
+    "name": "sanity.assist.instruction.userInput",
+    "type": "object",
+    "title": "User input"
+  },
+  {
+    "options": {
+      "modal": {
+        "type": "popover",
+        "width": "auto"
+      }
+    },
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "The referenced context will be inserted into the instruction",
+        "to": [
+          {
+            "liveEdit": true,
+            "type": "assist.instruction.context"
+          }
+        ],
+        "name": "reference",
+        "type": "reference",
+        "title": "Context"
+      }
+    ],
+    "name": "sanity.assist.instruction.context",
+    "type": "object",
+    "title": "AI context"
+  },
+  {
+    "fields": [
+      {
+        "name": "path",
+        "type": "string"
+      }
+    ],
+    "name": "sanity.assist.output.field",
+    "type": "object",
+    "title": "Output field"
+  },
+  {
+    "fields": [
+      {
+        "name": "type",
+        "type": "string"
+      }
+    ],
+    "name": "sanity.assist.output.type",
+    "type": "object",
+    "title": "Output type"
+  },
+  {
+    "liveEdit": true,
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "type": "sanity.assist.schemaType.field",
+            "title": "Field prompt"
+          }
+        ],
+        "name": "fields",
+        "type": "array"
+      }
+    ],
+    "name": "sanity.assist.schemaType.annotations",
+    "type": "object",
+    "title": "AI Document"
+  },
+  {
+    "liveEdit": true,
+    "fields": [
+      {
+        "of": [
+          {
+            "type": "sanity.assist.instructionTask",
+            "title": "Instruction task"
+          }
+        ],
+        "name": "tasks",
+        "type": "array"
+      }
+    ],
+    "name": "sanity.assist.task.status",
+    "type": "object",
+    "title": "Document instruction status"
+  },
+  {
+    "fields": [
+      {
+        "name": "path",
+        "type": "string"
+      },
+      {
+        "name": "instructionKey",
+        "type": "string",
+        "title": "Instruction key"
+      },
+      {
+        "name": "started",
+        "type": "datetime"
+      },
+      {
+        "name": "updated",
+        "type": "datetime"
+      },
+      {
+        "name": "info",
+        "type": "string"
+      }
+    ],
+    "name": "sanity.assist.instructionTask",
+    "type": "object",
+    "title": "Instruction task"
+  },
+  {
+    "liveEdit": true,
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": []
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "context",
+        "type": "array"
+      }
+    ],
+    "name": "assist.instruction.context",
+    "type": "document",
+    "title": "AI context"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "slug"
+      }
+    ],
+    "name": "media.tag",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ],
+    "name": "simplerColor",
+    "type": "object"
+  },
+  {
+    "fields": [
+      {
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ],
+    "name": "textColor",
+    "type": "object",
+    "title": "Text color"
+  },
+  {
+    "fields": [
+      {
+        "name": "label",
+        "type": "string"
+      },
+      {
+        "name": "value",
+        "type": "string"
+      }
+    ],
+    "name": "highlightColor",
+    "type": "object",
+    "title": "Highlight color"
+  },
+  {
+    "fields": [
+      {
+        "name": "siteTitle",
+        "type": "string"
+      },
+      {
+        "name": "siteLogo",
+        "type": "image",
+        "title": "Logo"
+      },
+      {
+        "description": "Choose which page you would like to set as the homepage.",
+        "to": [
+          {
+            "type": "page"
+          },
+          {
+            "type": "blogPage"
+          },
+          {
+            "type": "servicesPage"
+          },
+          {
+            "type": "projectsPage"
+          },
+          {
+            "type": "service"
+          },
+          {
+            "type": "project"
+          }
+        ],
+        "name": "homePage",
+        "type": "reference"
+      },
+      {
+        "name": "companyEmailAddress",
+        "type": "string",
+        "title": "Email Address"
+      },
+      {
+        "name": "companyPhoneNumber",
+        "type": "string",
+        "title": "Phone Number"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Platform Name"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "name": "profileUrl",
+                "type": "url",
+                "title": "Profile URL"
+              },
+              {
+                "name": "icon",
+                "type": "image"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "companySocialMediaLinks",
+        "type": "array",
+        "title": "Social Media Links"
+      },
+      {
+        "description": "Current year and © symbol will be added automatically.",
+        "name": "copyright",
+        "type": "string"
+      }
+    ],
+    "name": "generalSettings",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Single",
+                      "value": "single"
+                    },
+                    {
+                      "title": "Group",
+                      "value": "group"
+                    }
+                  ]
+                },
+                "initialValue": "single",
+                "name": "menuItemType",
+                "type": "string"
+              },
+              {
+                "description": "The title of the menu item.",
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "description": "The page that the menu item will link to.",
+                "to": [
+                  {
+                    "type": "page"
+                  },
+                  {
+                    "type": "blogPage"
+                  },
+                  {
+                    "type": "servicesPage"
+                  },
+                  {
+                    "type": "projectsPage"
+                  },
+                  {
+                    "type": "service"
+                  },
+                  {
+                    "type": "project"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "pageReference",
+                "type": "reference",
+                "title": "Page"
+              },
+              {
+                "of": [
+                  {
+                    "to": [
+                      {
+                        "type": "page"
+                      },
+                      {
+                        "type": "blogPage"
+                      },
+                      {
+                        "type": "servicesPage"
+                      },
+                      {
+                        "type": "projectsPage"
+                      },
+                      {
+                        "type": "service"
+                      },
+                      {
+                        "type": "project"
+                      }
+                    ],
+                    "type": "reference",
+                    "title": "Reference to page, blog page, services page, projects page, services or projects"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "pageReferences",
+                "type": "array"
+              },
+              {
+                "initialValue": false,
+                "description": "If checked, the menu item will be shown as a button instead of a link.",
+                "hidden": "conditional",
+                "name": "isButton",
+                "type": "boolean",
+                "title": "Show as Button"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "navbarMenuItems",
+        "type": "array",
+        "title": "Menu Items",
+        "fieldset": "navbar"
+      },
+      {
+        "initialValue": false,
+        "name": "showSlideOutMenu",
+        "type": "boolean",
+        "title": "Show Slide-Out Menu",
+        "fieldset": "slideOutMenu"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Single",
+                      "value": "single"
+                    },
+                    {
+                      "title": "Group",
+                      "value": "group"
+                    }
+                  ]
+                },
+                "initialValue": "single",
+                "name": "menuItemType",
+                "type": "string"
+              },
+              {
+                "description": "The title of the menu item.",
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "description": "The page that the menu item will link to.",
+                "to": [
+                  {
+                    "type": "page"
+                  },
+                  {
+                    "type": "blogPage"
+                  },
+                  {
+                    "type": "servicesPage"
+                  },
+                  {
+                    "type": "projectsPage"
+                  },
+                  {
+                    "type": "service"
+                  },
+                  {
+                    "type": "project"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "pageReference",
+                "type": "reference",
+                "title": "Page"
+              },
+              {
+                "of": [
+                  {
+                    "to": [
+                      {
+                        "type": "page"
+                      },
+                      {
+                        "type": "blogPage"
+                      },
+                      {
+                        "type": "servicesPage"
+                      },
+                      {
+                        "type": "projectsPage"
+                      },
+                      {
+                        "type": "service"
+                      },
+                      {
+                        "type": "project"
+                      }
+                    ],
+                    "type": "reference",
+                    "title": "Reference to page, blog page, services page, projects page, services or projects"
+                  }
+                ],
+                "hidden": "conditional",
+                "name": "pageReferences",
+                "type": "array"
+              },
+              {
+                "initialValue": false,
+                "description": "If checked, the menu item will be shown as a button instead of a link.",
+                "name": "isButton",
+                "type": "boolean",
+                "title": "Show as Button"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "slideOutMenuItems",
+        "type": "array",
+        "title": "Menu Items",
+        "fieldset": "slideOutMenu"
+      },
+      {
+        "description": "Display buttons in the footer of the slide-out menu.",
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "slideOutMenuButtons",
+        "type": "array",
+        "title": "Buttons",
+        "fieldset": "slideOutMenu"
+      },
+      {
+        "initialValue": false,
+        "description": "When enabled, company details (email, phone & socials) added in general settings will be displayed in the slide-out menu below the menu items.",
+        "name": "showCompanyDetailsSlideOutMenu",
+        "type": "boolean",
+        "title": "Show Company Details",
+        "fieldset": "slideOutMenu"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string",
+                "title": "Column Title"
+              },
+              {
+                "of": [
+                  {
+                    "fields": [
+                      {
+                        "description": "The title of the menu item.",
+                        "name": "title",
+                        "type": "string"
+                      },
+                      {
+                        "options": {
+                          "list": [
+                            {
+                              "title": "Internal",
+                              "value": "internal"
+                            },
+                            {
+                              "title": "External URL",
+                              "value": "external"
+                            }
+                          ]
+                        },
+                        "initialValue": "internal",
+                        "name": "linkType",
+                        "type": "string"
+                      },
+                      {
+                        "description": "The page that the menu item will link to.",
+                        "to": [
+                          {
+                            "type": "page"
+                          },
+                          {
+                            "type": "blogPage"
+                          },
+                          {
+                            "type": "servicesPage"
+                          },
+                          {
+                            "type": "projectsPage"
+                          },
+                          {
+                            "type": "service"
+                          },
+                          {
+                            "type": "project"
+                          }
+                        ],
+                        "hidden": "conditional",
+                        "name": "pageReference",
+                        "type": "reference",
+                        "title": "Page"
+                      },
+                      {
+                        "validation": [
+                          {
+                            "rules": [
+                              {
+                                "flag": "uri",
+                                "constraint": {
+                                  "options": {
+                                    "scheme": [
+                                      "/^http$/",
+                                      "/^https$/",
+                                      "/^mailto$/",
+                                      "/^tel$/"
+                                    ],
+                                    "allowRelative": false,
+                                    "relativeOnly": false,
+                                    "allowCredentials": false
+                                  }
+                                }
+                              }
+                            ],
+                            "level": "error"
+                          }
+                        ],
+                        "description": "The external URL that the menu item will link to.",
+                        "hidden": "conditional",
+                        "name": "externalUrl",
+                        "type": "url",
+                        "title": "External URL"
+                      }
+                    ],
+                    "type": "object"
+                  }
+                ],
+                "name": "menuItems",
+                "type": "array"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "footerColumns",
+        "type": "array",
+        "fieldset": "footer"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "description": "The title of the menu item.",
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "description": "The page that the menu item will link to.",
+                "to": [
+                  {
+                    "type": "page"
+                  },
+                  {
+                    "type": "blogPage"
+                  },
+                  {
+                    "type": "servicesPage"
+                  },
+                  {
+                    "type": "projectsPage"
+                  },
+                  {
+                    "type": "service"
+                  },
+                  {
+                    "type": "project"
+                  }
+                ],
+                "name": "pageReference",
+                "type": "reference",
+                "title": "Page"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "footerLegalMenuItems",
+        "type": "array",
+        "title": "Legal Menu Items",
+        "fieldset": "footer"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "navbar"
+      },
+      {
+        "name": "slideOutMenu"
+      },
+      {
+        "name": "footer"
+      }
+    ],
+    "name": "navigationSettings",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "googleAnalyticsId",
+        "type": "string",
+        "title": "Google Analytics ID"
+      },
+      {
+        "name": "googleTagManagerId",
+        "type": "string",
+        "title": "Google Tag Manager ID"
+      }
+    ],
+    "name": "marketingSettings",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": true,
+        "description": "Enable to display 3 related posts at the end of each post.",
+        "name": "showRelatedPosts",
+        "type": "boolean"
+      },
+      {
+        "initialValue": true,
+        "description": "Enable to display a table of contents in the right sidebar of each post.",
+        "name": "showTableOfContents",
+        "type": "boolean",
+        "title": "Show Table of Contents"
+      },
+      {
+        "initialValue": true,
+        "description": "Enable to display post categories in right sidebar of each post.",
+        "name": "showPostsByCategory",
+        "type": "boolean",
+        "title": "Show Posts by Category"
+      }
+    ],
+    "name": "blogSettings",
+    "type": "document"
+  },
+  {
+    "validation": [
+      {
+        "rules": [
+          {
+            "flag": "custom"
+          }
+        ],
+        "level": "error"
+      }
+    ],
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "source",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "destination",
+        "type": "string"
+      },
+      {
+        "initialValue": true,
+        "description": "Should the redirect be permanent (301) or temporary (302)",
+        "name": "permanent",
+        "type": "boolean"
+      },
+      {
+        "initialValue": true,
+        "description": "Toggle this redirect on or off",
+        "name": "isEnabled",
+        "type": "boolean"
+      }
+    ],
+    "name": "redirect",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "insertMenu": {
+            "groups": [
+              {
+                "name": "intro",
+                "title": "Intro"
+              },
+              {
+                "name": "content",
+                "title": "Content"
+              },
+              {
+                "name": "marketing",
+                "title": "Marketing"
+              },
+              {
+                "name": "socialProof",
+                "title": "Social Proof"
+              }
+            ],
+            "views": [
+              {
+                "name": "grid"
+              },
+              {
+                "name": "list"
+              }
+            ]
+          }
+        },
+        "name": "pageBuilder",
+        "type": "pageBuilder"
+      },
+      {
+        "name": "seo",
+        "type": "seoObject",
+        "title": "SEO"
+      }
+    ],
+    "name": "page",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "to": [
+          {
+            "type": "postCategory"
+          }
+        ],
+        "name": "category",
+        "type": "reference"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "to": [
+          {
+            "type": "author"
+          }
+        ],
+        "name": "author",
+        "type": "reference"
+      },
+      {
+        "rows": 4,
+        "name": "excerpt",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          },
+          {
+            "type": "callToActionObject",
+            "title": "Call To Action"
+          },
+          {
+            "type": "singleImageObject",
+            "title": "Single Image"
+          },
+          {
+            "type": "videoObject",
+            "title": "Video"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "fields": [
+          {
+            "name": "altText",
+            "type": "string",
+            "title": "Alternative Text"
+          },
+          {
+            "name": "caption",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Autofill",
+              "value": "autofill"
+            },
+            {
+              "title": "Custom",
+              "value": "custom"
+            }
+          ]
+        },
+        "initialValue": "autofill",
+        "description": "Defaults to posts of the same category.",
+        "name": "relatedPostsType",
+        "type": "string",
+        "title": "Related Posts"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "max",
+                "constraint": 3
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "to": [
+              {
+                "type": "post"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to posts"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "customRelatedPosts",
+        "type": "array",
+        "title": "Choose Related Posts"
+      },
+      {
+        "name": "seo",
+        "type": "seoObject",
+        "title": "SEO"
+      }
+    ],
+    "name": "post",
+    "type": "document",
+    "title": "Posts"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "description": "Defaults to white.",
+        "name": "categoryColor",
+        "type": "simplerColor",
+        "title": "Category color"
+      },
+      {
+        "readOnly": true,
+        "hidden": true,
+        "name": "orderRank",
+        "type": "string"
+      }
+    ],
+    "name": "postCategory",
+    "type": "document",
+    "title": "Post Categories"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "username",
+        "type": "string"
+      },
+      {
+        "rows": 4,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "bio",
+        "type": "text",
+        "title": "Short Bio"
+      },
+      {
+        "name": "avatar",
+        "type": "image"
+      }
+    ],
+    "name": "author",
+    "type": "document",
+    "title": "Authors"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "jobTitle",
+        "type": "string"
+      },
+      {
+        "name": "company",
+        "type": "string",
+        "title": "Company Name"
+      },
+      {
+        "rows": 6,
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "quote",
+        "type": "text"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "avatar",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "logo",
+        "type": "image"
+      },
+      {
+        "readOnly": true,
+        "hidden": true,
+        "name": "orderRank",
+        "type": "string"
+      }
+    ],
+    "name": "testimonial",
+    "type": "document",
+    "title": "Testimonials"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "readOnly": true,
+        "hidden": true,
+        "name": "orderRank",
+        "type": "string"
+      }
+    ],
+    "name": "projectCategory",
+    "type": "document",
+    "title": "Project Categories"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "to": [
+          {
+            "type": "projectCategory"
+          }
+        ],
+        "name": "category",
+        "type": "reference",
+        "title": "Project Category"
+      },
+      {
+        "rows": 4,
+        "name": "excerpt",
+        "type": "text"
+      },
+      {
+        "fields": [
+          {
+            "name": "altText",
+            "type": "string",
+            "title": "Alternative Text"
+          },
+          {
+            "name": "caption",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "options": {
+          "insertMenu": {
+            "groups": [
+              {
+                "name": "intro",
+                "title": "Intro"
+              },
+              {
+                "name": "content",
+                "title": "Content"
+              },
+              {
+                "name": "marketing",
+                "title": "Marketing"
+              },
+              {
+                "name": "socialProof",
+                "title": "Social Proof"
+              }
+            ],
+            "views": [
+              {
+                "name": "grid"
+              },
+              {
+                "name": "list"
+              }
+            ]
+          }
+        },
+        "name": "pageBuilder",
+        "type": "pageBuilder"
+      },
+      {
+        "name": "seo",
+        "type": "seoObject",
+        "title": "SEO"
+      }
+    ],
+    "name": "project",
+    "type": "document",
+    "title": "Projects"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string",
+        "title": "Form Title"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "submitButtonText",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "name",
+                "type": "string",
+                "title": "Name/Label"
+              },
+              {
+                "name": "placeholder",
+                "type": "string"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Text",
+                      "value": "text"
+                    },
+                    {
+                      "title": "Text Area",
+                      "value": "textarea"
+                    },
+                    {
+                      "title": "Email",
+                      "value": "email"
+                    },
+                    {
+                      "title": "Telephone",
+                      "value": "tel"
+                    }
+                  ]
+                },
+                "initialValue": "text",
+                "name": "inputType",
+                "type": "string"
+              },
+              {
+                "initialValue": false,
+                "name": "isRequired",
+                "type": "boolean",
+                "title": "Required"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "fields",
+        "type": "array",
+        "title": "Form Fields"
+      }
+    ],
+    "name": "form",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "insertMenu": {
+            "groups": [
+              {
+                "name": "intro",
+                "title": "Intro"
+              },
+              {
+                "name": "content",
+                "title": "Content"
+              },
+              {
+                "name": "marketing",
+                "title": "Marketing"
+              },
+              {
+                "name": "socialProof",
+                "title": "Social Proof"
+              }
+            ],
+            "views": [
+              {
+                "name": "grid"
+              },
+              {
+                "name": "list"
+              }
+            ]
+          }
+        },
+        "description": "These blocks will be displayed below the main content.",
+        "name": "pageBuilder",
+        "type": "pageBuilder"
+      },
+      {
+        "name": "seo",
+        "type": "seoObject",
+        "title": "SEO"
+      }
+    ],
+    "name": "blogPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "rows": 4,
+        "name": "shortDescription",
+        "type": "text"
+      },
+      {
+        "fields": [
+          {
+            "name": "altText",
+            "type": "string",
+            "title": "Alternative Text"
+          },
+          {
+            "name": "caption",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "options": {
+          "insertMenu": {
+            "groups": [
+              {
+                "name": "intro",
+                "title": "Intro"
+              },
+              {
+                "name": "content",
+                "title": "Content"
+              },
+              {
+                "name": "marketing",
+                "title": "Marketing"
+              },
+              {
+                "name": "socialProof",
+                "title": "Social Proof"
+              }
+            ],
+            "views": [
+              {
+                "name": "grid"
+              },
+              {
+                "name": "list"
+              }
+            ]
+          }
+        },
+        "name": "pageBuilder",
+        "type": "pageBuilder"
+      },
+      {
+        "name": "seo",
+        "type": "seoObject",
+        "title": "SEO"
+      },
+      {
+        "readOnly": true,
+        "hidden": true,
+        "name": "orderRank",
+        "type": "string"
+      }
+    ],
+    "name": "service",
+    "type": "document",
+    "title": "Services"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "insertMenu": {
+            "groups": [
+              {
+                "name": "intro",
+                "title": "Intro"
+              },
+              {
+                "name": "content",
+                "title": "Content"
+              },
+              {
+                "name": "marketing",
+                "title": "Marketing"
+              },
+              {
+                "name": "socialProof",
+                "title": "Social Proof"
+              }
+            ],
+            "views": [
+              {
+                "name": "grid"
+              },
+              {
+                "name": "list"
+              }
+            ]
+          }
+        },
+        "description": "These blocks will be displayed below the main content.",
+        "name": "pageBuilder",
+        "type": "pageBuilder"
+      },
+      {
+        "name": "seo",
+        "type": "seoObject",
+        "title": "SEO"
+      }
+    ],
+    "name": "servicesPage",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title"
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "insertMenu": {
+            "groups": [
+              {
+                "name": "intro",
+                "title": "Intro"
+              },
+              {
+                "name": "content",
+                "title": "Content"
+              },
+              {
+                "name": "marketing",
+                "title": "Marketing"
+              },
+              {
+                "name": "socialProof",
+                "title": "Social Proof"
+              }
+            ],
+            "views": [
+              {
+                "name": "grid"
+              },
+              {
+                "name": "list"
+              }
+            ]
+          }
+        },
+        "description": "These blocks will be displayed below the main content.",
+        "name": "pageBuilder",
+        "type": "pageBuilder"
+      },
+      {
+        "name": "seo",
+        "type": "seoObject",
+        "title": "SEO"
+      }
+    ],
+    "name": "projectsPage",
+    "type": "document"
+  },
+  {
+    "options": {
+      "insertMenu": {
+        "groups": [
+          {
+            "name": "intro",
+            "title": "Intro"
+          },
+          {
+            "name": "content",
+            "title": "Content"
+          },
+          {
+            "name": "marketing",
+            "title": "Marketing"
+          },
+          {
+            "name": "socialProof",
+            "title": "Social Proof"
+          }
+        ],
+        "views": [
+          {
+            "name": "grid"
+          },
+          {
+            "name": "list"
+          }
+        ]
+      }
+    },
+    "of": [
+      {
+        "type": "heroBlock",
+        "title": "Hero"
+      },
+      {
+        "type": "headerBlock",
+        "title": "Header"
+      },
+      {
+        "type": "featureCardsBlock",
+        "title": "Feature Cards"
+      },
+      {
+        "type": "featuresMinimalBlock",
+        "title": "Features (Minimal)"
+      },
+      {
+        "type": "freeformBlock",
+        "title": "Freeform"
+      },
+      {
+        "type": "portableTextBlock",
+        "title": "Portable Text"
+      },
+      {
+        "type": "callToActionBlock",
+        "title": "Call To Action"
+      },
+      {
+        "type": "logoBlock",
+        "title": "Logos"
+      },
+      {
+        "type": "testimonialBlock",
+        "title": "Testimonials"
+      },
+      {
+        "fieldsets": [
+          {
+            "name": "padding",
+            "options": {
+              "columns": 2
+            }
+          }
+        ],
+        "type": "servicesBlock",
+        "title": "Services"
+      },
+      {
+        "type": "formBlock",
+        "title": "Form"
+      },
+      {
+        "type": "mediaBlock",
+        "title": "Media"
+      }
+    ],
+    "name": "pageBuilder",
+    "type": "array"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Image",
+              "value": "image"
+            },
+            {
+              "title": "None",
+              "value": "none"
+            }
+          ]
+        },
+        "initialValue": "image",
+        "name": "mediaType",
+        "type": "string",
+        "title": "Media"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Straight",
+              "value": "straight"
+            },
+            {
+              "title": "Rounded",
+              "value": "rounded"
+            }
+          ]
+        },
+        "initialValue": "straight",
+        "name": "bottomCornerRadius",
+        "type": "string",
+        "title": "Corner Radius - Bottom L/R"
+      },
+      {
+        "fields": [
+          {
+            "name": "altText",
+            "type": "string",
+            "title": "Alternative Text"
+          },
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Full",
+                  "value": "full"
+                },
+                {
+                  "title": "Short",
+                  "value": "short"
+                }
+              ]
+            },
+            "initialValue": "full",
+            "name": "height",
+            "type": "string"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "buttons",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Video",
+              "value": "video"
+            }
+          ]
+        },
+        "initialValue": "none",
+        "name": "dialogType",
+        "type": "string"
+      },
+      {
+        "hidden": "conditional",
+        "name": "videoUrl",
+        "type": "string",
+        "title": "Video URL"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Dark",
+              "value": "dark"
+            }
+          ]
+        },
+        "initialValue": "none",
+        "name": "overlayType",
+        "type": "string"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "heroBlock",
+    "type": "object",
+    "title": "Hero"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Straight",
+              "value": "straight"
+            },
+            {
+              "title": "Rounded",
+              "value": "rounded"
+            }
+          ]
+        },
+        "initialValue": "straight",
+        "name": "bottomCornerRadius",
+        "type": "string",
+        "title": "Corner Radius - Bottom L/R"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "headerBlock",
+    "type": "object",
+    "title": "Header"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "buttons",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "rows": 4,
+                "name": "description",
+                "type": "text"
+              },
+              {
+                "of": [
+                  {
+                    "type": "string"
+                  }
+                ],
+                "name": "items",
+                "type": "array"
+              },
+              {
+                "name": "image",
+                "type": "image"
+              },
+              {
+                "fields": [
+                  {
+                    "initialValue": false,
+                    "name": "showButton",
+                    "type": "boolean"
+                  },
+                  {
+                    "hidden": "conditional",
+                    "name": "buttonText",
+                    "type": "string"
+                  },
+                  {
+                    "options": {
+                      "list": [
+                        {
+                          "title": "Internal",
+                          "value": "internal"
+                        },
+                        {
+                          "title": "Anchor",
+                          "value": "anchor"
+                        },
+                        {
+                          "title": "External URL",
+                          "value": "external"
+                        },
+                        {
+                          "title": "File Download",
+                          "value": "fileDownload"
+                        },
+                        {
+                          "title": "Email Address",
+                          "value": "emailAddress"
+                        }
+                      ]
+                    },
+                    "initialValue": "internal",
+                    "hidden": "conditional",
+                    "name": "buttonType",
+                    "type": "string"
+                  },
+                  {
+                    "options": {
+                      "list": [
+                        {
+                          "title": "Current Page",
+                          "value": "currentPage"
+                        },
+                        {
+                          "title": "Choose Page",
+                          "value": "choosePage"
+                        }
+                      ]
+                    },
+                    "initialValue": "currentPage",
+                    "hidden": "conditional",
+                    "name": "buttonAnchorLocation",
+                    "type": "string"
+                  },
+                  {
+                    "description": "The page that the button will link to.",
+                    "to": [
+                      {
+                        "type": "page"
+                      },
+                      {
+                        "type": "blogPage"
+                      },
+                      {
+                        "type": "servicesPage"
+                      },
+                      {
+                        "type": "projectsPage"
+                      },
+                      {
+                        "type": "service"
+                      },
+                      {
+                        "type": "project"
+                      }
+                    ],
+                    "hidden": "conditional",
+                    "name": "buttonPageReference",
+                    "type": "reference"
+                  },
+                  {
+                    "description": "The anchor ID that the button will link to.",
+                    "hidden": "conditional",
+                    "name": "buttonAnchorId",
+                    "type": "string",
+                    "title": "Button Anchor ID"
+                  },
+                  {
+                    "validation": [
+                      {
+                        "rules": [
+                          {
+                            "flag": "uri",
+                            "constraint": {
+                              "options": {
+                                "scheme": [
+                                  "/^http$/",
+                                  "/^https$/",
+                                  "/^mailto$/",
+                                  "/^tel$/"
+                                ],
+                                "allowRelative": false,
+                                "relativeOnly": false,
+                                "allowCredentials": false
+                              }
+                            }
+                          }
+                        ],
+                        "level": "error"
+                      }
+                    ],
+                    "description": "The external URL that the button will link to.",
+                    "hidden": "conditional",
+                    "name": "buttonExternalUrl",
+                    "type": "url",
+                    "title": "Button External URL"
+                  },
+                  {
+                    "description": "The email address that the button will link to.",
+                    "hidden": "conditional",
+                    "name": "buttonEmailAddress",
+                    "type": "string"
+                  },
+                  {
+                    "hidden": "conditional",
+                    "name": "buttonFileUrl",
+                    "type": "file",
+                    "title": "Button File URL"
+                  },
+                  {
+                    "options": {
+                      "list": [
+                        {
+                          "title": "Primary",
+                          "value": "primary"
+                        },
+                        {
+                          "title": "Secondary",
+                          "value": "secondary"
+                        },
+                        {
+                          "title": "Tertiary",
+                          "value": "tertiary"
+                        },
+                        {
+                          "title": "Outline",
+                          "value": "outline"
+                        },
+                        {
+                          "title": "Underline",
+                          "value": "underline"
+                        }
+                      ]
+                    },
+                    "initialValue": "primary",
+                    "hidden": "conditional",
+                    "name": "buttonVariant",
+                    "type": "string"
+                  },
+                  {
+                    "options": {
+                      "list": [
+                        {
+                          "title": "Automatic",
+                          "value": "auto"
+                        },
+                        {
+                          "title": "Full-Width",
+                          "value": "fullWidth"
+                        }
+                      ]
+                    },
+                    "initialValue": "auto",
+                    "hidden": "conditional",
+                    "name": "buttonWidth",
+                    "type": "string"
+                  }
+                ],
+                "name": "button",
+                "type": "object"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "features",
+        "type": "array"
+      },
+      {
+        "name": "showCallToAction",
+        "type": "boolean"
+      },
+      {
+        "name": "callToActionHeading",
+        "type": "string",
+        "title": "CTA Heading"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "callToActionContent",
+        "type": "array",
+        "title": "CTA Content"
+      },
+      {
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "callToActionButtons",
+        "type": "array",
+        "title": "CTA Buttons"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "featureCardsBlock",
+    "type": "object",
+    "title": "Feature Cards"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "description": "Buttons will be displayed below the main heading.",
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "buttons",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "features",
+        "type": "array"
+      },
+      {
+        "initialValue": false,
+        "name": "enableBorderTop",
+        "type": "boolean"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Rounded",
+              "value": "rounded"
+            },
+            {
+              "title": "Straight",
+              "value": "straight"
+            }
+          ]
+        },
+        "initialValue": "rounded",
+        "hidden": "conditional",
+        "name": "cornerRadiusTop",
+        "type": "string"
+      },
+      {
+        "name": "enableBorderBottom",
+        "type": "boolean"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Rounded",
+              "value": "rounded"
+            },
+            {
+              "title": "Straight",
+              "value": "straight"
+            }
+          ]
+        },
+        "initialValue": "rounded",
+        "hidden": "conditional",
+        "name": "cornerRadiusBottom",
+        "type": "string"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "featuresMinimalBlock",
+    "type": "object",
+    "title": "Features (Minimal)"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "2",
+              "value": "2"
+            },
+            {
+              "title": "3",
+              "value": "3"
+            },
+            {
+              "title": "4",
+              "value": "4"
+            }
+          ]
+        },
+        "initialValue": "2",
+        "name": "columnsPerRow",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "description": "For internal purposes.",
+                "name": "title",
+                "type": "string",
+                "title": "Column Title"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "None",
+                      "value": "none"
+                    },
+                    {
+                      "title": "Small",
+                      "value": "small"
+                    },
+                    {
+                      "title": "Medium",
+                      "value": "medium"
+                    },
+                    {
+                      "title": "Large",
+                      "value": "large"
+                    }
+                  ],
+                  "layout": "radio"
+                },
+                "initialValue": "small",
+                "description": "Add some default spacing between items (optional).",
+                "name": "spacing",
+                "type": "string",
+                "title": "Spacing Between Items"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Left",
+                      "value": "left"
+                    },
+                    {
+                      "title": "Center",
+                      "value": "center"
+                    },
+                    {
+                      "title": "Right",
+                      "value": "right"
+                    }
+                  ],
+                  "layout": "radio"
+                },
+                "initialValue": "left",
+                "name": "alignment",
+                "type": "string"
+              },
+              {
+                "of": [
+                  {
+                    "type": "spacerObject",
+                    "title": "Spacer"
+                  },
+                  {
+                    "type": "headingObject",
+                    "title": "Heading"
+                  },
+                  {
+                    "type": "richTextObject",
+                    "title": "Rich Text"
+                  },
+                  {
+                    "type": "buttonObject",
+                    "title": "Button"
+                  },
+                  {
+                    "type": "singleImageObject",
+                    "title": "Image"
+                  }
+                ],
+                "name": "items",
+                "type": "array"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "columns",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Top & Bottom",
+              "value": "topBottom"
+            },
+            {
+              "title": "Top Only",
+              "value": "top"
+            },
+            {
+              "title": "Bottom Only",
+              "value": "bottom"
+            }
+          ]
+        },
+        "initialValue": "none",
+        "description": "Display a border to seperate this block with blocks above and below.",
+        "name": "border",
+        "type": "string"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "freeformBlock",
+    "type": "object",
+    "title": "Freeform"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          },
+          {
+            "type": "callToActionObject",
+            "title": "Call To Action"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Left",
+              "value": "left"
+            },
+            {
+              "title": "Center",
+              "value": "center"
+            },
+            {
+              "title": "Right",
+              "value": "right"
+            }
+          ],
+          "layout": "radio"
+        },
+        "initialValue": "center",
+        "name": "alignment",
+        "type": "string"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "portableTextBlock",
+    "type": "object",
+    "title": "Portable Text"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "buttons",
+        "type": "array"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "callToActionBlock",
+    "type": "object",
+    "title": "Call To Action"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "title",
+                "type": "string"
+              },
+              {
+                "name": "image",
+                "type": "image",
+                "title": "Logo"
+              },
+              {
+                "options": {
+                  "list": [
+                    {
+                      "title": "Default",
+                      "value": "default"
+                    },
+                    {
+                      "title": "Large",
+                      "value": "large"
+                    }
+                  ]
+                },
+                "initialValue": "default",
+                "name": "size",
+                "type": "string"
+              },
+              {
+                "validation": [
+                  {
+                    "rules": [
+                      {
+                        "flag": "uri",
+                        "constraint": {
+                          "options": {
+                            "scheme": [
+                              "/^http$/",
+                              "/^https$/"
+                            ],
+                            "allowRelative": false,
+                            "relativeOnly": false,
+                            "allowCredentials": false
+                          }
+                        }
+                      }
+                    ],
+                    "level": "error"
+                  }
+                ],
+                "description": "Optional",
+                "name": "link",
+                "type": "url",
+                "title": "External Link"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "logos",
+        "type": "array"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "logoBlock",
+    "type": "object",
+    "title": "Logos"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Image",
+              "value": "image"
+            },
+            {
+              "title": "Video",
+              "value": "video"
+            }
+          ]
+        },
+        "initialValue": "image",
+        "name": "backgroundType",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Full-width",
+              "value": "full"
+            },
+            {
+              "title": "Contained",
+              "value": "contained"
+            }
+          ]
+        },
+        "initialValue": "full",
+        "name": "backgroundWidth",
+        "type": "string"
+      },
+      {
+        "fields": [
+          {
+            "name": "altText",
+            "type": "string",
+            "title": "Alternative Text"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Dark",
+              "value": "dark"
+            }
+          ]
+        },
+        "initialValue": "none",
+        "name": "overlayType",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Video",
+              "value": "video"
+            }
+          ]
+        },
+        "initialValue": "none",
+        "name": "dialogType",
+        "type": "string"
+      },
+      {
+        "hidden": "conditional",
+        "name": "videoUrl",
+        "type": "string",
+        "title": "Video URL"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "mediaBlock",
+    "type": "object",
+    "title": "Media"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "name": "eyebrow",
+        "type": "string"
+      },
+      {
+        "description": "Select testimonials to display.",
+        "of": [
+          {
+            "to": [
+              {
+                "type": "testimonial"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to testimonials"
+          }
+        ],
+        "name": "testimonials",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Rounded",
+              "value": "rounded"
+            },
+            {
+              "title": "Straight",
+              "value": "straight"
+            }
+          ]
+        },
+        "initialValue": "straight",
+        "name": "cornerRadiusTop",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Rounded",
+              "value": "rounded"
+            },
+            {
+              "title": "Straight",
+              "value": "straight"
+            }
+          ]
+        },
+        "initialValue": "straight",
+        "name": "cornerRadiusBottom",
+        "type": "string"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "testimonialBlock",
+    "type": "object",
+    "title": "Testimonials"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "to": [
+              {
+                "type": "service"
+              }
+            ],
+            "type": "reference",
+            "title": "Reference to services"
+          }
+        ],
+        "name": "services",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "White Background",
+              "value": "white"
+            },
+            {
+              "title": "Pattern Background",
+              "value": "pattern"
+            }
+          ]
+        },
+        "initialValue": "white",
+        "name": "background",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Straight",
+              "value": "straight"
+            },
+            {
+              "title": "Rounded",
+              "value": "rounded"
+            }
+          ]
+        },
+        "initialValue": "straight",
+        "name": "topCornerRadius",
+        "type": "string",
+        "title": "Corner Radius - Top L/R"
+      },
+      {
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "buttons",
+        "type": "array"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Small",
+              "value": "small"
+            },
+            {
+              "title": "Medium",
+              "value": "medium"
+            },
+            {
+              "title": "Default",
+              "value": "default"
+            },
+            {
+              "title": "Large",
+              "value": "large"
+            }
+          ]
+        },
+        "initialValue": "default",
+        "name": "paddingTop",
+        "type": "string",
+        "title": "Top",
+        "fieldset": "padding"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Small",
+              "value": "small"
+            },
+            {
+              "title": "Medium",
+              "value": "medium"
+            },
+            {
+              "title": "Default",
+              "value": "default"
+            },
+            {
+              "title": "Large",
+              "value": "large"
+            }
+          ]
+        },
+        "initialValue": "default",
+        "name": "paddingBottom",
+        "type": "string",
+        "title": "Bottom",
+        "fieldset": "padding"
+      }
+    ],
+    "fieldsets": [
+      {
+        "name": "padding",
+        "options": {
+          "columns": 2
+        }
+      }
+    ],
+    "name": "servicesBlock",
+    "type": "object",
+    "title": "Services"
+  },
+  {
+    "fields": [
+      {
+        "name": "heading",
+        "type": "string"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "content",
+        "type": "array"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "to": [
+          {
+            "type": "form"
+          }
+        ],
+        "name": "form",
+        "type": "reference"
+      },
+      {
+        "name": "anchorId",
+        "type": "string",
+        "title": "Anchor ID"
+      }
+    ],
+    "name": "formBlock",
+    "type": "object",
+    "title": "Form"
+  },
+  {
+    "fields": [
+      {
+        "description": "If left blank, the page title will be used.",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "rows": 3,
+        "name": "description",
+        "type": "text"
+      },
+      {
+        "initialValue": false,
+        "description": "Enable this for pages you don't want appearing in search results.",
+        "name": "noIndex",
+        "type": "boolean"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "If left blank, an OG image will be auto-generated.",
+        "name": "image",
+        "type": "image"
+      }
+    ],
+    "name": "seoObject",
+    "type": "object",
+    "title": "SEO"
+  },
+  {
+    "fields": [
+      {
+        "name": "headingText",
+        "type": "string",
+        "title": "Heading"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "H2",
+              "value": "h2"
+            },
+            {
+              "title": "H3",
+              "value": "h3"
+            },
+            {
+              "title": "H4",
+              "value": "h4"
+            },
+            {
+              "title": "H5",
+              "value": "h5"
+            },
+            {
+              "title": "H6",
+              "value": "h6"
+            }
+          ]
+        },
+        "initialValue": "h2",
+        "name": "headingTag",
+        "type": "string",
+        "title": "Tag"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "XXXL",
+              "value": "xxxl"
+            },
+            {
+              "title": "XXL",
+              "value": "xxl"
+            },
+            {
+              "title": "XL",
+              "value": "xl"
+            },
+            {
+              "title": "LG",
+              "value": "lg"
+            },
+            {
+              "title": "MD",
+              "value": "md"
+            },
+            {
+              "title": "SM",
+              "value": "sm"
+            },
+            {
+              "title": "XS",
+              "value": "xs"
+            }
+          ]
+        },
+        "initialValue": "xl",
+        "name": "headingSize",
+        "type": "string",
+        "title": "Size"
+      }
+    ],
+    "name": "headingObject",
+    "type": "object",
+    "title": "Heading"
+  },
+  {
+    "fields": [
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "richTextContent",
+        "type": "array",
+        "title": "Content"
+      }
+    ],
+    "name": "richTextObject",
+    "type": "object",
+    "title": "Rich Text"
+  },
+  {
+    "fields": [
+      {
+        "initialValue": false,
+        "name": "showButton",
+        "type": "boolean"
+      },
+      {
+        "hidden": "conditional",
+        "name": "buttonText",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Internal",
+              "value": "internal"
+            },
+            {
+              "title": "Anchor",
+              "value": "anchor"
+            },
+            {
+              "title": "External URL",
+              "value": "external"
+            },
+            {
+              "title": "File Download",
+              "value": "fileDownload"
+            },
+            {
+              "title": "Email Address",
+              "value": "emailAddress"
+            }
+          ]
+        },
+        "initialValue": "internal",
+        "hidden": "conditional",
+        "name": "buttonType",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Current Page",
+              "value": "currentPage"
+            },
+            {
+              "title": "Choose Page",
+              "value": "choosePage"
+            }
+          ]
+        },
+        "initialValue": "currentPage",
+        "hidden": "conditional",
+        "name": "buttonAnchorLocation",
+        "type": "string"
+      },
+      {
+        "description": "The page that the button will link to.",
+        "to": [
+          {
+            "type": "page"
+          },
+          {
+            "type": "blogPage"
+          },
+          {
+            "type": "servicesPage"
+          },
+          {
+            "type": "projectsPage"
+          },
+          {
+            "type": "service"
+          },
+          {
+            "type": "project"
+          }
+        ],
+        "hidden": "conditional",
+        "name": "buttonPageReference",
+        "type": "reference"
+      },
+      {
+        "description": "The anchor ID that the button will link to.",
+        "hidden": "conditional",
+        "name": "buttonAnchorId",
+        "type": "string",
+        "title": "Button Anchor ID"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/",
+                      "/^mailto$/",
+                      "/^tel$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "The external URL that the button will link to.",
+        "hidden": "conditional",
+        "name": "buttonExternalUrl",
+        "type": "url",
+        "title": "Button External URL"
+      },
+      {
+        "description": "The email address that the button will link to.",
+        "hidden": "conditional",
+        "name": "buttonEmailAddress",
+        "type": "string"
+      },
+      {
+        "hidden": "conditional",
+        "name": "buttonFileUrl",
+        "type": "file",
+        "title": "Button File URL"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Primary",
+              "value": "primary"
+            },
+            {
+              "title": "Secondary",
+              "value": "secondary"
+            },
+            {
+              "title": "Tertiary",
+              "value": "tertiary"
+            },
+            {
+              "title": "Outline",
+              "value": "outline"
+            },
+            {
+              "title": "Underline",
+              "value": "underline"
+            }
+          ]
+        },
+        "initialValue": "primary",
+        "hidden": "conditional",
+        "name": "buttonVariant",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Automatic",
+              "value": "auto"
+            },
+            {
+              "title": "Full-Width",
+              "value": "fullWidth"
+            }
+          ]
+        },
+        "initialValue": "auto",
+        "hidden": "conditional",
+        "name": "buttonWidth",
+        "type": "string"
+      }
+    ],
+    "name": "buttonObject",
+    "type": "object",
+    "title": "Button"
+  },
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "name": "altText",
+            "type": "string",
+            "title": "Alternative Text"
+          },
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Square",
+                  "value": "square"
+                },
+                {
+                  "title": "Rectangle",
+                  "value": "rectangle"
+                },
+                {
+                  "title": "Portrait",
+                  "value": "portrait"
+                }
+              ],
+              "layout": "radio"
+            },
+            "initialValue": "square",
+            "name": "aspectRatio",
+            "type": "string"
+          }
+        ],
+        "name": "image",
+        "type": "image"
+      }
+    ],
+    "name": "singleImageObject",
+    "type": "object",
+    "title": "Single Image"
+  },
+  {
+    "fields": [
+      {
+        "options": {
+          "list": [
+            {
+              "title": "None",
+              "value": "none"
+            },
+            {
+              "title": "Small",
+              "value": "small"
+            },
+            {
+              "title": "Medium",
+              "value": "medium"
+            },
+            {
+              "title": "Large",
+              "value": "large"
+            }
+          ],
+          "layout": "radio"
+        },
+        "initialValue": "small",
+        "name": "spacing",
+        "type": "string"
+      }
+    ],
+    "name": "spacerObject",
+    "type": "object",
+    "title": "Spacer"
+  },
+  {
+    "fields": [
+      {
+        "name": "callToActionTitle",
+        "type": "string",
+        "title": "Title"
+      },
+      {
+        "rows": 4,
+        "name": "callToActionParagraph",
+        "type": "text",
+        "title": "Paragraph"
+      },
+      {
+        "of": [
+          {
+            "type": "buttonObject",
+            "title": "Button"
+          }
+        ],
+        "name": "buttons",
+        "type": "array"
+      }
+    ],
+    "name": "callToActionObject",
+    "type": "object",
+    "title": "Call To Action"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Video Title"
+      },
+      {
+        "name": "videoUrl",
+        "type": "string",
+        "title": "Video URL"
+      }
+    ],
+    "name": "videoObject",
+    "type": "object",
+    "title": "Video"
+  }
+]
